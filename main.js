@@ -42,7 +42,8 @@ class Main extends Component {
             <View style={styles.header}>
             </View>
             <View style={styles.inputs}>
-              <Text style={[styles.text, styles.whiteFont]}>Toplam Masraf <Text style={styles.greyFont}>0.00 TL</Text></Text>
+              
+                <Text style={[styles.text, styles.whiteFont]}>Toplam Masraf <Text style={styles.greyFont}>0.00 TL</Text></Text>
                 <Text style={[styles.text, styles.whiteFont]}>Toplam Odeme <Text style={styles.greyFont}>0.00 TL</Text></Text>
                 <Text style={[styles.text, styles.whiteFont]}>Kalan Masraf <Text style={styles.greyFont}>0.00 TL</Text></Text>
                 <View style={styles.inputContainer}>
@@ -66,6 +67,16 @@ class Main extends Component {
 }
 
 var styles = StyleSheet.create({
+    flex1: {
+      flex:1,
+      flexDirection:'column' 
+    },
+    text: {
+      left:20,
+      right: 0,
+      height: 20,
+      fontSize: 14,
+    },
     container: {
       flexDirection: 'column',
       flex: 1,
@@ -119,12 +130,6 @@ var styles = StyleSheet.create({
         borderBottomColor: '#CCC',
         borderColor: 'transparent'
     },
-    text: {
-        left:20,
-        right: 0,
-        height: 20,
-        fontSize: 14
-    },
     input: {
         position: 'absolute',
         left: 61,
@@ -138,7 +143,7 @@ var styles = StyleSheet.create({
       padding: 15,
     },
     greyFont: {
-      color: '#D8D8D8',
+      color: 'red',
     },
     whiteFont: {
       color: '#FFF'
