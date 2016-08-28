@@ -35,16 +35,16 @@ class Main extends Component {
   
   render() {
     return (
-        <View style={styles.container}>
+       <View style={styles.container}>
             <Image style={styles.bg} 
               source={require('./img/login1_bg.png')}
             />
             <View style={styles.header}>
-                <Image style={styles.mark} 
-                  source={require('./img/login1_mark.png')}
-                />
             </View>
             <View style={styles.inputs}>
+              <Text style={[styles.text, styles.whiteFont]}>Toplam Masraf <Text style={styles.greyFont}>0.00 TL</Text></Text>
+                <Text style={[styles.text, styles.whiteFont]}>Toplam Odeme <Text style={styles.greyFont}>0.00 TL</Text></Text>
+                <Text style={[styles.text, styles.whiteFont]}>Kalan Masraf <Text style={styles.greyFont}>0.00 TL</Text></Text>
                 <View style={styles.inputContainer}>
                     <Image style={styles.inputUsername} 
                       source={require('./img/login1_person.png')}
@@ -60,11 +60,6 @@ class Main extends Component {
                     />
                 </View>
             </View>
-            <TouchableHighlight onPress={this._onPressButton.bind(this)}>
-              <View style={styles.signin}>                 
-                    <Text style={styles.whiteFont}>Ok</Text>
-              </View>
-            </TouchableHighlight>
         </View>
     );
   }
@@ -86,8 +81,13 @@ var styles = StyleSheet.create({
     header: {
         justifyContent: 'center',
         alignItems: 'center',
-        flex: .5,
+        flex: .05,
         backgroundColor: 'transparent'
+    },
+    inputs: {
+        marginTop: 10,
+        marginBottom: 10,
+        flex: .25
     },
     mark: {
         width: 150,
@@ -102,11 +102,6 @@ var styles = StyleSheet.create({
       justifyContent: 'center',
       alignItems: 'center',
       flex: .15
-    },
-    inputs: {
-        marginTop: 10,
-        marginBottom: 10,
-        flex: .25
     },
     inputPassword: {
         marginLeft: 15,
@@ -124,6 +119,12 @@ var styles = StyleSheet.create({
         borderBottomColor: '#CCC',
         borderColor: 'transparent'
     },
+    text: {
+        left:20,
+        right: 0,
+        height: 20,
+        fontSize: 14
+    },
     input: {
         position: 'absolute',
         left: 61,
@@ -137,7 +138,7 @@ var styles = StyleSheet.create({
       padding: 15,
     },
     greyFont: {
-      color: '#D8D8D8'
+      color: '#D8D8D8',
     },
     whiteFont: {
       color: '#FFF'

@@ -15,7 +15,7 @@ render() {
       <NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'Login',
+          title: '',
           component: Login,
         }}/>
     );

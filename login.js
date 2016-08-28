@@ -32,12 +32,12 @@ class Login extends Component {
   }
   
   _onPressButton(event){
-    Alert.alert(
+    /*Alert.alert(
       'Alert Title',
       this.state.username + '\n' + this.state.password
-    );
+    );*/
     this.props.navigator.push({
-        title: 'Main',
+        title: 'Masraf Takip v1.0(b)',
 		component: Main
 	});
   }
