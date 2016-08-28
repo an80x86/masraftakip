@@ -42,24 +42,57 @@ class Main extends Component {
             <View style={styles.header}>
             </View>
             <View style={styles.inputs}>
-              
-                <Text style={[styles.text, styles.whiteFont]}>Toplam Masraf <Text style={styles.greyFont}>0.00 TL</Text></Text>
-                <Text style={[styles.text, styles.whiteFont]}>Toplam Odeme <Text style={styles.greyFont}>0.00 TL</Text></Text>
-                <Text style={[styles.text, styles.whiteFont]}>Kalan Masraf <Text style={styles.greyFont}>0.00 TL</Text></Text>
-                <View style={styles.inputContainer}>
-                    <Image style={styles.inputUsername} 
-                      source={require('./img/login1_person.png')}
-                    />
-                    <TextInput 
-                        editable = {true}
-                        maxLength = {40}
-                        style={[styles.input, styles.whiteFont]}
-                        placeholder="Username"
-                        placeholderTextColor="#FFF"
-                        onChangeText={(text) => this.setState({username:text})}
-                        value={this.state.username}
-                    />
+                <View style={{flexDirection: 'row'}}>
+                  <View style={{flex: 1,width: 150, height: 20}}>
+                    <Text style={[styles.text, styles.whiteFont]}>Toplam Masraf</Text>
+                  </View>
+                  <View style={{flex: 1,width: 100, height: 20, alignItems:'flex-end', paddingRight:10}}>
+                    <Text style={styles.greyFont}>0.00 TL</Text>
+                  </View>
                 </View>
+
+                <View style={{flexDirection: 'row'}}>
+                  <View style={{flex: 1,width: 150, height: 20}}>
+                    <Text style={[styles.text, styles.whiteFont]}>Toplam Odeme</Text>
+                  </View>
+                  <View style={{flex: 1,width: 100, height: 20, alignItems:'flex-end', paddingRight:10}}>
+                    <Text style={styles.greyFont}>0.00 TL</Text>
+                  </View>
+                </View>              
+              
+                <View style={{flexDirection: 'row'}}>
+                  <View style={{flex: 1,width: 150, height: 20}}>
+                    <Text style={[styles.text, styles.whiteFont]}>Kalan Masraf</Text>
+                  </View>
+                  <View style={{flex: 1,width: 100, height: 20, alignItems:'flex-end', paddingRight:10}}>
+                    <Text style={styles.greyFont}>0.00 TL</Text>
+                  </View>
+                </View>  
+              
+                <Text style={styles.ust}></Text>
+                
+                <TouchableHighlight onPress={this._onPressButton.bind(this)}>
+                  <View style={styles.signin}>                 
+                        <Text style={styles.whiteFont}>Masra Girisi</Text>
+                  </View>
+                </TouchableHighlight>
+                
+                <Text></Text>
+                
+                <TouchableHighlight onPress={this._onPressButton.bind(this)}>
+                  <View style={styles.signin}>                 
+                        <Text style={styles.whiteFont}>Odeme Girisi</Text>
+                  </View>
+                </TouchableHighlight>              
+
+                <Text></Text>
+              
+                <TouchableHighlight onPress={this._onPressButton.bind(this)}>
+                  <View style={styles.signin}>                 
+                        <Text style={styles.whiteFont}>Rapor</Text>
+                  </View>
+                </TouchableHighlight>
+              
             </View>
         </View>
     );
@@ -89,6 +122,9 @@ var styles = StyleSheet.create({
         width: windowSize.width,
         height: windowSize.height
     },
+    ust: {
+      marginTop: 100,
+    },
     header: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -105,9 +141,11 @@ var styles = StyleSheet.create({
         height: 150
     },
     signin: {
-        backgroundColor: '#FF3366',
-        padding: 20,
-        alignItems: 'center'
+      marginLeft: 50,
+      marginRight: 50,
+      backgroundColor: '#FF3366',
+      padding: 20,
+      alignItems: 'center'
     },
     signup: {
       justifyContent: 'center',
@@ -143,7 +181,7 @@ var styles = StyleSheet.create({
       padding: 15,
     },
     greyFont: {
-      color: 'red',
+      color: 'yellow',
     },
     whiteFont: {
       color: '#FFF'
