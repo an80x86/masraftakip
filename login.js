@@ -15,9 +15,6 @@ import {
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
 
-var alertMessage = 'Credibly reintermediate next-generation potentialities after goal-oriented ' +
-                   'catalysts for change. Dynamically revolutionize.';
-
 var Forgot = require('./forgot.js');
 var Register = require('./register.js');
 var Main = require('./main.js');

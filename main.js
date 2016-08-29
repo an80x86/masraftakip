@@ -10,13 +10,15 @@ import {
   Image,
   TouchableHighlight,
   Alert,
+  NavigatorIOS,
 } from 'react-native';
 
 var Dimensions = require('Dimensions');
 var windowSize = Dimensions.get('window');
 
-var alertMessage = 'Credibly reintermediate next-generation potentialities after goal-oriented ' +
-                   'catalysts for change. Dynamically revolutionize.';
+var Masraf = require('./masraf.js');
+var Odeme = require('./odeme.js');
+var Rapor = require('./rapor.js');
 
 class Main extends Component {
   constructor(props) {
@@ -26,11 +28,25 @@ class Main extends Component {
     };
   }
   
-  _onPressButton(event){
-    Alert.alert(
-      'Alert Title',
-      this.state.username
-    );
+  _onPressButton1(event){
+      this.props.navigator.push({
+        title: 'Masraf Girisi',
+		component: Masraf
+      });
+  }
+  
+  _onPressButton2(event){
+      this.props.navigator.push({
+        title: 'Odeme Girisi',
+		component: Odeme
+      });
+  }
+  
+  _onPressButton3(event){
+      this.props.navigator.push({
+        title: 'Rapor',
+		component: Rapor
+      });
   }
   
   render() {
@@ -71,7 +87,7 @@ class Main extends Component {
               
                 <Text style={styles.ust}></Text>
                 
-                <TouchableHighlight onPress={this._onPressButton.bind(this)}>
+                <TouchableHighlight onPress={this._onPressButton1.bind(this)}>
                   <View style={styles.signin}>                 
                         <Text style={styles.whiteFont}>Masra Girisi</Text>
                   </View>
@@ -79,7 +95,7 @@ class Main extends Component {
                 
                 <Text></Text>
                 
-                <TouchableHighlight onPress={this._onPressButton.bind(this)}>
+                <TouchableHighlight onPress={this._onPressButton2.bind(this)}>
                   <View style={styles.signin}>                 
                         <Text style={styles.whiteFont}>Odeme Girisi</Text>
                   </View>
@@ -87,7 +103,7 @@ class Main extends Component {
 
                 <Text></Text>
               
-                <TouchableHighlight onPress={this._onPressButton.bind(this)}>
+                <TouchableHighlight onPress={this._onPressButton3.bind(this)}>
                   <View style={styles.signin}>                 
                         <Text style={styles.whiteFont}>Rapor</Text>
                   </View>

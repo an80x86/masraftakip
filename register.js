@@ -23,14 +23,15 @@ class Register extends Component {
     super(props);
     this.state = { 
         username: '',
-        password: ''
+        password: '',
+        repassword: '',
     };
   }
   
   _onPressButton(event){
     Alert.alert(
       'Alert Title',
-      this.state.username + '\n' + this.state.password
+      this.state.username + '\n' + this.state.password+ '\n' + this.state.repassword
     );
   }
   
@@ -81,23 +82,24 @@ class Register extends Component {
                         value={this.state.password}
                     />
                 </View>
-                <View style={styles.forgotContainer}>
-                  <TouchableHighlight onPress={this._onPressButton2.bind(this)}>
-                    <Text style={styles.greyFont}>Forgot Password</Text>
-                  </TouchableHighlight>
+                <View style={styles.inputContainer}>
+                    <Image style={styles.inputPassword} 
+                      source={require('./img/login1_lock.png')}
+                    />
+                    <TextInput
+                        editable = {true}
+                        password={true}
+                        style={[styles.input, styles.whiteFont]}
+                        placeholder="RePasword"
+                        placeholderTextColor="#FFF"
+                        onChangeText={(text3) => this.setState({repassword:text3})}
+                        value={this.state.repassword}
+                    />
                 </View>
             </View>
             <TouchableHighlight onPress={this._onPressButton.bind(this)}>
               <View style={styles.signin}>                 
-                    <Text style={styles.whiteFont}>Sign In</Text>
-              </View>
-            </TouchableHighlight>
-            <TouchableHighlight onPress={this._onPressButton.bind(this)}>
-              <View style={styles.signup}>
-                  <Text 
-                      style={styles.greyFont}>Don't have an account?
-                          <Text style={styles.whiteFont}>  Sign Up</Text>
-                  </Text>
+                    <Text style={styles.whiteFont}>Ok</Text>
               </View>
             </TouchableHighlight>
         </View>
