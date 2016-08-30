@@ -34,7 +34,7 @@ class Login extends Component {
       this.state.username + '\n' + this.state.password
     );*/
     this.props.navigator.push({
-        title: 'Masraf Takip v1.0(b)',
+        title: '',
 		component: Main
 	});
   }
